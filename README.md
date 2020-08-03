@@ -9,11 +9,11 @@ exemplo de criação drawer navigation e bottomTabNavigation do react native
   
   2 - Caso esteja no mac é necessário a instalação do pods:
   
-    - "cd ios"
+      - "cd ios"
     
-    - "npx pod-install ios"
+      - "npx pod-install ios"
     
-    - "cd .."
+      - "cd .."
     
   3 - importe a gesture handler no seu arquivo index.js ou App.js. Apenas se certifique que será a primeira linha do seu arquivo: "import 'react-native-gesture-handler';"
   
@@ -35,7 +35,5 @@ exemplo de criação drawer navigation e bottomTabNavigation do react native
   4 - Entre as tags Navigation Container coloque:
   
       <Stack.Navigator>
-      
                 <Stack.Screen name="Main Screen" component={Home} />
-                
       </Stack.Navigator>
