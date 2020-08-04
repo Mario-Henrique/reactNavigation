@@ -110,7 +110,7 @@ Bottom Tab Navigation
 
   4 - crie uma constante para seu material bottom tab navigation:
   
-      > Tab = createMaterialBottomTabNavigator();
+      > const Tab = createMaterialBottomTabNavigator();
       
   5 - Aqui um exemplo de utilização da navegação:
   
