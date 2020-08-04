@@ -93,24 +93,26 @@ Bottom Tab Navigation
                 <BTab.Screen name="Home" component={Home} />
                 <BTab.Screen name="Config" component={Config} />
         </BTab.Navigator>
-        
-  5 - Para incrementar sua bottom tabs você pode colocar os materiais para o mesmo:
+  
+  Material Bottom Tab Navigation
+  -
+  1 - Instale a material tabs e icones para incrementar:
       
       > npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons/MaterialCommunityIcons
   
-  6 - Ao invés de importar bottomNavigator faça com materialBottomNavigator:
+  2 - importe a materialBottomTabNavigator:
   
       > import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs;
   
-  7 - Importe também os icones:
+  3 - Importe também os icones:
   
       > import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-  8 - crie uma constante para seu material bottom tab navigation:
+  4 - crie uma constante para seu material bottom tab navigation:
   
       > Tab = createMaterialBottomTabNavigator();
       
-  9 - Aqui um exemplo de utilização da navegação:
+  5 - Aqui um exemplo de utilização da navegação:
   
       <Tab.Navigator
         initialRouteName="Feed"
