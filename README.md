@@ -3,8 +3,8 @@ exemplo de criação drawer navigation e bottomTabNavigation do react native
 
 #Docs de como iniciar com o react navigation: https://reactnavigation.org/docs/getting-started
 
-#Passos para react navigation 5 (03/08/2020):
-
+Passos para react navigation 5 (03/08/2020):
+-
   1 - Instalação das dependências:
   
       > npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view @react-navigation/native
@@ -98,7 +98,7 @@ Bottom Tab Navigation
   -
   1 - Instale a material tabs e icones para incrementar:
       
-      > npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons/MaterialCommunityIcons
+      > yarn add @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons/MaterialCommunityIcons
   
   2 - importe a materialBottomTabNavigator:
   
