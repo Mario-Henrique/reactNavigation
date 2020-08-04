@@ -102,7 +102,7 @@ Bottom Tab Navigation
   
   2 - importe a materialBottomTabNavigator:
   
-      > import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs;
+      > import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
   
   3 - Importe também os icones:
   
