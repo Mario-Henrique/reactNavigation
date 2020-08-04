@@ -5,30 +5,45 @@ exemplo de criação drawer navigation e bottomTabNavigation do react native
 
 #Passos para react navigation 5 (03/08/2020):
 
-  1 - Instalação das dependências: "npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view @react-navigation/native"
+  1 - Instalação das dependências:
+  
+      > npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view @react-navigation/native
   
   2 - Caso esteja no mac é necessário a instalação do pods:
   
-      > "cd ios"
-      > "npx pod-install ios"
-      > "cd .."
+      > cd ios
+      > npx pod-install ios
+      > cd ..
     
-  3 - importe a gesture handler no seu arquivo index.js ou App.js. Apenas se certifique que será a primeira linha do seu arquivo: "import 'react-native-gesture-handler';"
+  3 - importe a gesture handler no seu arquivo index.js ou App.js. Apenas se certifique que será a primeira linha do seu arquivo:
   
-  4 - em seu App.js logo após a importação do React, faça a importação da NavigationContainer: "import { NavigationContainer } from '@react-navigation/native';"
+      > import 'react-native-gesture-handler';
   
-  5 - Quando for utilizar sua navegação, faça entre as tags <NavigationContainer></NavigationContainer>
+  4 - em seu App.js logo após a importação do React, faça a importação da NavigationContainer:
+  
+      > import { NavigationContainer } from '@react-navigation/native';
+  
+  5 - Quando for utilizar sua navegação, faça entre as tags:
+  
+      <NavigationContainer>
+        ...
+      </NavigationContainer>
  
  A partir dai basta fazer uso do tipo de navegação que você queira para sua aplicação.
  
  Stack Navigation
  -
- 
-  1 - yarn add @react-navigation/stack
+  1 - Faça a instalação da sua stack navigation:
   
-  2 - no seu App.js faça o import da stack navigation: "import {createStackNavigator} from '@react-navigation/stack';"
+      > yarn add @react-navigation/stack
   
-  3 - crie uma constante para iniciar sua stack navigation: "const Stack = createStackNavigator();"
+  2 - no seu App.js faça o import da stack navigation:
+  
+      > import {createStackNavigator} from '@react-navigation/stack';
+  
+  3 - crie uma constante para iniciar sua stack navigation:
+  
+      > const Stack = createStackNavigator();
   
   4 - Entre as tags Navigation Container coloque:
   
@@ -39,12 +54,17 @@ exemplo de criação drawer navigation e bottomTabNavigation do react native
       
 Drawer Navigation
 -
-
-  1 - yarn add @react-navigation/drawer
+  1 - Faça a instalação do drawer navigation:
   
-  2 - no seu App.js faça o import da drawer navigation: "import {createDrawerNavigator} from '@react-navigation/drawer';"
+      > yarn add @react-navigation/drawer
   
-  3 - crie uma constante para iniciar sua drawer navigation: "const Drawer = createDrawerNavigator();"
+  2 - no seu App.js faça o import da drawer navigation:
+  
+      > import {createDrawerNavigator} from '@react-navigation/drawer';
+  
+  3 - crie uma constante para iniciar sua drawer navigation:
+  
+      > const Drawer = createDrawerNavigator();
   
   4 - Entre as tags Navigation Container coloque:
   
@@ -55,12 +75,17 @@ Drawer Navigation
         
 Bottom Tab Navigation
 -
-
-  1 - yarn add @react-navigation/bottom-tabs
+  1 - Faça a instalação da bottom-tabs:
   
-  2 - no seu App.js faça o import da bottom tab navigation: "import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';"
+      > yarn add @react-navigation/bottom-tabs
   
-  3 - crie uma constante para iniciar sua bottom tab navigation: "const BTab = createBottomTabNavigator();"
+  2 - no seu App.js faça o import da bottom tab navigation:
+  
+      > import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+  
+  3 - crie uma constante para iniciar sua bottom tab navigation:
+  
+      > const BTab = createBottomTabNavigator();
   
   4 - Entre as tags Navigation Container coloque:
   
@@ -71,7 +96,7 @@ Bottom Tab Navigation
         
   5 - Para incrementar sua bottom tabs você pode colocar os materiais para o mesmo:
       
-      > npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
+      > npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons/MaterialCommunityIcons
   
   6 - Ao invés de importar bottomNavigator faça com materialBottomNavigator:
   
@@ -79,4 +104,47 @@ Bottom Tab Navigation
   
   7 - Importe também os icones:
   
-      > import Icon from 'react-native-vector-icons/Ionicons';
+      > import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+  8 - crie uma constante para seu material bottom tab navigation:
+  
+      > Tab = createMaterialBottomTabNavigator();
+      
+  9 - Aqui um exemplo de utilização da navegação:
+  
+      <Tab.Navigator
+        initialRouteName="Feed"
+        activeColor="#e91e63"
+        style={{ backgroundColor: 'tomato' }}
+      >
+        <Tab.Screen
+          name="Feed"
+          component={Feed}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="home" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Notifications"
+          component={Notifications}
+          options={{
+            tabBarLabel: 'Updates',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="bell" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="account" color={color} size={26} />
+            ),
+          }}
+        />
+    </Tab.Navigator>
